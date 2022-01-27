@@ -1,59 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Linking BoxIcon for Icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-</head>
-<body>
-    <div class="wrapper">
-        <header><i class="bx bx-left-arrow-alt"></i>Weather App</header>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+        <div id="vanta"></div>
+
+        <header>
+          <h1>Weather App</h1>
+        </header>
+
+      <div class="wrapper element">
+        <i class='bx bx-left-arrow-alt'></i>
         <section class="input-part">
             <p class="info-txt"></p>
-            <input type="text" placeholder="Enter city name" spellcheck="false" required>
-            <div class="separator"></div>
+            <div class="content">
+                <input type="text" spellcheck="false" placeholder="Enter city name" required>
+                <div class="separator"></div>
                 <button>Get Device Location</button>
+            </div>
         </section>
-
         <section class="weather-part">
-            <img src="#" alt="Weather Icon">
+            <img src="" alt="Weather Icon">
             <div class="temp">
                 <span class="numb">_</span>
                 <span class="deg">°</span>C
             </div>
-            <div class="weather">Broken Cloud</div>
+            <div class="weather">_ _</div>
             <div class="location">
-                <i class="bx bx-map"></i>
+                <i class='bx bx-map'></i>
                 <span>_, _</span>
             </div>
             <div class="bottom-details">
-                <div class="column feels">
-                    <i class="bx bxs-thermometer"></i>
-                    <div class="details">
-                        <div class="temp">
-                            <span class="numb-2">_</span>
-                            <span class="deg">°</span>C
-                        </div>
-                        <p>Feels like</p>
-                    </div>
+            <div class="column feels">
+                <div class="details">
+                <div class="temp">
+                    <span class="numb-2">_</span>
+                    <span class="deg">°</span>C
                 </div>
-                <div class="column humidity">
-                    <i class="bx bxs-droplet-half"></i>
-                    <div class="details">
-                        <span>_ _</span>
-                        <p>Humidity</p>
-                    </div>
+                <p>Feels like</p>
                 </div>
             </div>
-
+            <div class="column humidity">
+                <div class="details">
+                    <span>_</span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            </div>
         </section>
-    </div>
-    <script src="script.js" type="text/javascript"></script>
-</body>
+      </div>
+    
+    <script src="script.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+        <script type="text/javascript">
+            VANTA.CLOUDS({
+            el: "#vanta",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            skyColor: 0x29a0cf,
+            cloudColor: 0xd0d0ed,
+            sunColor: 0xff8000,
+            sunGlareColor: 0xfc3200,
+            sunlightColor: 0xf07400
+            })
+        </script>
+  </body>
 </html>
